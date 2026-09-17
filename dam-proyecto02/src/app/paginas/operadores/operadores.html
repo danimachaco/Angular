@@ -1,0 +1,15 @@
+<h3>Mensaje</h3>
+<p>{{ mensaje }}</p>
+<!-- //recibe el dato -->
+
+<h3>Mensaje con propertie binding</h3>
+<h5 [innerHTML]="mensaje"></h5>
+<!-- //pinta el dato -->
+
+<h3>Mensaje con two-way binding</h3>
+<input type="text" [(ngModel)]="usuario">
+<p>{{ usuario }}</p>
+<h3>Usuario</h3>
+<!-- //pinta el dato -->
+
+
