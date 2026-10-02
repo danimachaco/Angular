@@ -1,0 +1,16 @@
+<h1>Ejercicio 5</h1>
+<p>Crearemos una Clase Cuenta Bancaria, en la que introducimos saldo inicial, haremos ingresos, retiraremos importe y pediremos el saldo después de estas operaciones.</p>
+<div class="mb-3 mt-3">
+  <label for="" class="form-label">Saldo inicial:</label>
+  <input type="number" [(ngModel)]="saldoInicial" class="form-control" placeholder="Introduce un numero">
+</div>
+<div class="mb-3 mt-3">
+  <label for="" class="form-label">Hacer ingreso:</label>
+  <input type="number" [(ngModel)]="ingreso" class="form-control" placeholder="Cantidad a ingresar">
+</div>
+<div class="mb-3 mt-3">
+  <label for="" class="form-label">Retirar importe:</label>
+  <input type="number" [(ngModel)]="retiro" class="form-control" placeholder="Cantidad a retirar">
+</div>
+
+<button type="button" (click)="enviarRespuesta5()" class="btn btn-info">Enviar respuesta 5</button>
