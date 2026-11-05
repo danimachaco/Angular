@@ -1,6 +1,6 @@
 <!-- Title -->
 <div class="pt-32  bg-white">
-<h1 class="text-center text-2xl font-bold text-gray-800">All Products</h1>
+<h1 class="text-center text-2xl font-bold text-gray-800">Ejercicio 2</h1>
 </div>
 
 <!-- Tab Menu -->
@@ -39,7 +39,7 @@
 
     @for(x of alumnos; track $index){
       <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 ">
-      <a href="#">
+      <a>
         <div class="relative flex items-end overflow-hidden rounded-xl">
           <img src="{{x.foto + '?random=' + $index}}" alt="Hotel Photo" />
           <div class="flex items-center space-x-1.5 rounded-lg bg-blue-500 px-4 py-1.5 text-white duration-100 hover:bg-blue-600">
@@ -64,7 +64,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
                 </svg>
 
-                <button class="text-sm">Add to cart</button>
+                <button class="text-sm" (click)="aniadirCarrito(x)">Añadir al carrito</button>
               </div>
             </div>
           </div>
@@ -74,3 +74,74 @@
     
   </div>
 </section>
+
+
+<!-- Modal -->
+@if(mostrarModal){
+  <div 
+   class="fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 backdrop-blur-sm transition-opacity duration-300">
+   <!-- $event.stopPropagation() evita que el click dentro del cuadro cierre el modal -->
+   <div (click)="$event.stopPropagation()" class="relative m-4 rounded-lg bg-white shadow-sm max-w-md w-full">
+       <div class="flex items-start justify-between p-4">
+           <div>
+               <h5 class="text-xl font-medium text-slate-800">
+                   Connect Web 3.0 Wallet
+               </h5>
+               <p class="text-slate-500 text-sm font-light">
+
+
+               </p>
+           </div>
+           <button (click)="closeModal()"
+               class="relative h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-blue-gray-500 transition-all hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30"
+               type="button">
+               <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform">
+                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                       stroke-width="2" class="h-5 w-5">
+                       <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                   </svg>
+               </span>
+           </button>
+       </div>
+       <div class="relative px-4">
+           <div class="mb-6">
+               <p class="pt-3 text-xs uppercase text-slate-500">Popular</p>
+               <button
+                   class="w-full mt-3 rounded-md flex items-center justify-center border border-slate-300 py-2 px-4 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800"
+                   type="button">
+                   <img src="https://docs.material-tailwind.com/icons/metamask.svg" alt="metamask"
+                       class="h-5 w-5 mr-2" />
+                   {{nombreA}}
+               </button>
+
+
+               <button
+                   class="w-full mt-2 rounded-md flex items-center justify-center border border-slate-300 py-2 px-4 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800"
+                   type="button">
+                   <img src="https://docs.material-tailwind.com/icons/coinbase.svg" alt="coinbase"
+                       class="h-5 w-5 mr-2 rounded-md" />
+                   {{apellidoA}}
+               </button>
+           </div>
+           <div>
+               <p class="pt-3 text-xs uppercase text-slate-500">Other</p>
+               <button
+                   class="mt-3 w-full rounded-md flex items-center justify-center border border-slate-300 py-2 px-4 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800"
+                   type="button">
+                   <img src="https://docs.material-tailwind.com/icons/trust-wallet.svg" alt="trust wallet"
+                       class="h-5 w-5 rounded-md mr-2 border border-slate-300" />
+                   {{emailA}}
+               </button>
+           </div>
+       </div>
+       <div class="flex flex-wrap items-center justify-between gap-2 p-4 text-blue-gray-500 mt-2">
+           <p class="text-sm text-slate-500">New to Ethereum wallets?</p>
+           <button
+               class="rounded-md border border-slate-300 py-2 px-4 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800"
+               type="button">
+               Learn More
+           </button>
+       </div>
+   </div>
+  </div>
+}

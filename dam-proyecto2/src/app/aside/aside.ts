@@ -8,9 +8,26 @@ import { RouterLink } from '@angular/router';
   templateUrl: './aside.html',
 })
 export class Aside {
-  desplegado:boolean = false
+  desplegadoCF:boolean = false
+  desplegadoS:boolean = false
+  desplegadoC:boolean = false
+  desplegadoDir:boolean = false
 
-  public desplegar(){
-    this.desplegado = !this.desplegado
+
+
+  public desplegarCF(){
+    this.desplegadoCF = !this.desplegadoCF
+  }
+
+  public desplegarS(){
+    this.desplegadoS = !this.desplegadoS
+  }
+
+  public desplegarC(){
+    this.desplegadoC = !this.desplegadoC
+  }
+
+  public desplegarDir(){
+    this.desplegadoDir = !this.desplegadoDir
   }
 }

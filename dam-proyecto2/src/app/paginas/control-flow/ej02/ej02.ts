@@ -16,22 +16,6 @@ export const listaAlumnos: Alumno[] =[
     apellido:"Machaco",
     email:"ns@email.com",
     foto:"https://picsum.photos/400/300"
-  },
-  { 
-    nombre:"Daniel",
-    apellido:"Machaco",
-    email:"ns@email.com",
-    foto:"https://picsum.photos/400/300"
-  },{ 
-    nombre:"Daniel",
-    apellido:"Machaco",
-    email:"ns@email.com",
-    foto:"https://picsum.photos/400/300"
-  },{ 
-    nombre:"Daniel",
-    apellido:"Machaco",
-    email:"ns@email.com",
-    foto:"https://picsum.photos/400/300"
   }
 
 ]
@@ -44,4 +28,23 @@ export const listaAlumnos: Alumno[] =[
 })
 export class Ej02 {
   alumnos: Alumno[] = listaAlumnos
+
+  mostrarModal: boolean = false
+
+  nombreA: string = ""
+  apellidoA: string = ""
+  emailA: string = ""
+
+
+  aniadirCarrito(alumno: Alumno){
+    this.mostrarModal = !this.mostrarModal
+    this.nombreA = alumno.nombre
+    this.apellidoA = alumno.apellido
+    this.emailA = alumno.email
+
+  }
+
+  closeModal(){
+    this.mostrarModal = !this.mostrarModal
+  }
 }
